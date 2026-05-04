@@ -347,9 +347,9 @@ a {
 }
 
 .footer-links {
-    display: flex;
+    display: flex;;
     justify-content: center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     gap: 18px 28px;
 }
 
