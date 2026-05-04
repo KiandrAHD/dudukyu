@@ -1,11 +1,13 @@
 :root {
     --red: #c91520;
+    --red-bright: #ff0808;
     --red-dark: #8f1e2a;
     --text: #402b2f;
     --muted: #7a7072;
-    --page: #fff3f3;
+    --page: #fff1f1;
     --card: #ffffff;
-    --shadow: 0 14px 22px rgba(73, 55, 58, 0.24);
+    --shadow: 0 24px 34px rgba(61, 45, 49, 0.18);
+    --shadow-small: 0 6px 9px rgba(66, 61, 63, 0.2);
 }
 
 * {
@@ -20,7 +22,7 @@ body {
     margin: 0;
     font-family: "Poppins", sans-serif;
     color: var(--text);
-    background: #060606;
+    background: #fff;
 }
 
 a,
@@ -34,53 +36,53 @@ img {
 }
 
 .page-shell {
-    width: min(94%, 1328px);
-    margin: 18px auto;
+    width: min(100%, 1440px);
+    margin: 0 auto;
     overflow: hidden;
-    background: var(--page);
+    background: linear-gradient(180deg, #fff4f4 0%, var(--page) 84%, #fff 100%);
 }
 
 .topbar {
-    height: 78px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 32px;
-    background: #fff;
-    box-shadow: 0 2px 10px rgba(35, 28, 30, 0.08);
+    min-height: 78px;
+    padding: 18px 36px;
+    background: rgba(255, 255, 255, 0.96);
 }
 
 .brand,
 .footer-brand {
     color: var(--red);
-    font-size: 1.35rem;
+    font-size: 1.14rem;
     font-style: italic;
     font-weight: 800;
     text-decoration: none;
 }
 
 .profile-chip {
-    min-width: 148px;
-    height: 44px;
+    min-width: 154px;
+    min-height: 44px;
     border: 0;
     border-radius: 999px;
     background: var(--red);
     color: #fff;
+    font-size: 0.9rem;
     font-weight: 700;
-    box-shadow: 0 4px 8px rgba(112, 30, 38, 0.34);
+    box-shadow: 0 6px 12px rgba(88, 23, 28, 0.32);
     cursor: pointer;
 }
 
 .hero {
     display: grid;
     grid-template-columns: 51.8% 48.2%;
-    min-height: 500px;
+    min-height: 520px;
     background: #eee;
 }
 
 .hero-image,
 .hero-content {
-    min-height: 500px;
+    min-height: 520px;
 }
 
 .hero-image img {
@@ -104,9 +106,7 @@ img {
     position: absolute;
     inset: 0;
     z-index: -2;
-    background: url("../assets/tentang-kami/4.jpg") center / cover;
-    filter: blur(6px);
-    transform: scale(1.04);
+    background: url(" ") center
 }
 
 .hero-content::after {
@@ -114,15 +114,14 @@ img {
     position: absolute;
     inset: 0;
     z-index: -1;
-    background: rgba(255, 255, 255, 0.58);
-    backdrop-filter: blur(4px);
+    background: rgba(255, 255, 255, 0.72);
 }
 
 .hero h1 {
-    max-width: 570px;
+    max-width: 620px;
     margin: 0;
     color: #422d31;
-    font-size: clamp(2.7rem, 4.6vw, 4.05rem);
+    font-size: clamp(2.7rem, 4.4vw, 4.3rem);
     font-weight: 800;
     line-height: 1.18;
     letter-spacing: 0;
@@ -134,7 +133,7 @@ img {
 .solution-item h3 span,
 .benefits h2 span,
 .info-card h3 span {
-    color: var(--red);
+    color: var(--red-bright);
 }
 
 .hero p {
@@ -178,12 +177,12 @@ img {
 .challenges,
 .solution-section,
 .benefits {
-    padding-left: 28px;
-    padding-right: 28px;
+    width: min(88.8%, 1310px);
+    margin-inline: auto;
 }
 
 .challenges {
-    padding-top: 56px;
+    padding-top: 62px;
 }
 
 .challenges h2,
@@ -197,24 +196,30 @@ img {
 
 .card-grid {
     display: grid;
-    gap: 42px;
+    gap: 24px;
 }
 
 .challenge-grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    margin-top: 28px;
+    margin-top: 32px;
 }
 
 .info-card {
-    min-height: 155px;
+    min-height: 170px;
     display: grid;
     grid-template-columns: 56px 1fr;
     gap: 18px;
     align-items: start;
-    padding: 26px 20px;
-    border-radius: 28px;
+    padding: 28px 22px;
+    border: 3px solid #f0f0f0;
+    border-radius: 30px;
     background: var(--card);
-    box-shadow: var(--shadow);
+    box-shadow: var(--shadow-small);
+}
+
+.info-card > div,
+.solution-copy {
+    min-width: 0;
 }
 
 .icon-chip,
@@ -259,11 +264,11 @@ img {
     grid-template-columns: 1.04fr 0.96fr;
     gap: 58px;
     align-items: center;
-    padding-top: 104px;
+    padding-top: 108px;
 }
 
 .solution-image {
-    padding-left: 35px;
+    padding-left: 0;
 }
 
 .solution-image img {
@@ -275,11 +280,11 @@ img {
 }
 
 .solution-card {
-    margin-top: 16px;
+    margin-top: 20px;
     padding: 32px 28px 34px;
     border-radius: 30px;
     background: #fff;
-    box-shadow: var(--shadow);
+    box-shadow: var(--shadow-small);
 }
 
 .solution-item {
@@ -326,8 +331,8 @@ img {
 }
 
 .benefits {
-    padding-top: 86px;
-    padding-bottom: 88px;
+    padding-top: 98px;
+    padding-bottom: 96px;
 }
 
 .benefits h2 {
@@ -341,7 +346,7 @@ img {
 }
 
 .benefit-card {
-    min-height: 145px;
+    min-height: 160px;
     gap: 16px;
     padding: 26px 18px;
 }
@@ -372,31 +377,25 @@ img {
 
 .footer {
     display: grid;
-    grid-template-columns: 150px 1fr 395px;
-    gap: 34px;
+    grid-template-columns: auto 1fr auto;
+    gap: 28px;
     align-items: center;
-    min-height: 130px;
-    padding: 30px 32px;
-    background: #f2f2f2;
-}
-
-.footer-brand {
-    font-size: 1.1rem;
+    padding: 34px 36px;
+    background: rgba(255, 255, 255, 0.9);
 }
 
 .footer-links {
     display: flex;
-    align-items: center;
     justify-content: center;
-    gap: 34px;
+    flex-wrap: wrap;
+    gap: 18px 34px;
 }
 
 .footer-links a,
 .footer-copy {
-    color: #9c9697;
-    font-size: 0.9rem;
+    color: #9a9295;
+    font-size: 0.82rem;
     font-weight: 600;
-    line-height: 1.3;
     text-decoration: none;
 }
 
@@ -406,6 +405,7 @@ img {
 }
 
 .footer-copy {
+    max-width: 440px;
     margin: 0;
 }
 
@@ -431,18 +431,14 @@ img {
 }
 
 @media (max-width: 860px) {
-    .page-shell {
-        width: 100%;
-        margin: 0;
-    }
-
     .topbar {
-        height: 68px;
-        padding: 0 18px;
+        min-height: 68px;
+        padding: 14px 18px;
     }
 
     .profile-chip {
-        min-width: 108px;
+        min-width: 112px;
+        min-height: 40px;
     }
 
     .hero {
@@ -469,6 +465,7 @@ img {
     .challenges,
     .solution-section,
     .benefits {
+        width: 100%;
         padding-left: 18px;
         padding-right: 18px;
     }
@@ -516,5 +513,9 @@ img {
     .footer-links {
         gap: 18px;
         flex-wrap: wrap;
+    }
+
+    .footer {
+        padding-inline: 18px;
     }
 }
