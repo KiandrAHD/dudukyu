@@ -32,6 +32,7 @@ button {
 img {
     display: block;
     width: 100%;
+    max-width: 100%;
 }
 
 .page-shell {
@@ -73,14 +74,14 @@ img {
 }
 
 .page-title {
-    padding: 112px 28px 139px;
+    padding: 96px 28px 116px;
     text-align: center;
 }
 
 .page-title h1 {
     margin: 0;
     color: #482832;
-    font-size: clamp(3rem, 4.7vw, 4.6rem);
+    font-size: 4.35rem;
     font-weight: 800;
     line-height: 1;
     letter-spacing: 0;
@@ -96,7 +97,7 @@ img {
 .feature-strip {
     width: min(87.5%, 1290px);
     margin-inline: auto;
-    border-radius: 44px;
+    border-radius: 36px;
     background: rgba(255, 255, 255, 0.97);
     box-shadow: var(--shadow-soft);
 }
@@ -104,25 +105,25 @@ img {
 .intro-card {
     display: grid;
     grid-template-columns: 1.02fr 1fr;
-    gap: 60px;
+    gap: clamp(34px, 4vw, 60px);
     align-items: center;
-    padding: 78px 56px;
+    padding: clamp(44px, 5.4vw, 70px) clamp(32px, 4.4vw, 56px);
 }
 
 .intro-media img,
 .about-media img {
-    height: 520px;
+    height: clamp(420px, 38vw, 520px);
     object-fit: cover;
-    border-radius: 50px;
+    border-radius: 32px;
 }
 
 .intro-copy h2 {
     max-width: 590px;
     margin: 0;
     color: #4e343b;
-    font-size: clamp(2.75rem, 4.1vw, 4.35rem);
+    font-size: 3.85rem;
     font-weight: 800;
-    line-height: 0.98;
+    line-height: 1.04;
     letter-spacing: 0;
 }
 
@@ -157,10 +158,10 @@ img {
 .about-card {
     display: grid;
     grid-template-columns: 1fr 0.96fr;
-    gap: 74px;
+    gap: clamp(34px, 5vw, 68px);
     align-items: center;
-    margin-top: 86px;
-    padding: 74px 28px 74px 95px;
+    margin-top: 74px;
+    padding: clamp(44px, 5vw, 68px) clamp(32px, 5.8vw, 84px);
 }
 
 .about-copy h2,
@@ -168,10 +169,14 @@ img {
 .why-section h2 {
     margin: 0;
     color: #2f2226;
-    font-size: clamp(2.45rem, 3.9vw, 4rem);
+    font-size: 3.45rem;
     font-weight: 800;
     line-height: 1.06;
     letter-spacing: 0;
+}
+
+.about-copy h2 span {
+    display: block;
 }
 
 .about-copy h2 span,
@@ -181,25 +186,32 @@ img {
 
 .about-copy p {
     max-width: 570px;
-    margin: 66px 0 32px;
+    margin: 24px 0 28px;
     color: #5f595c;
-    font-size: 1.13rem;
+    font-size: 1.06rem;
     font-weight: 500;
-    line-height: 1.46;
+    line-height: 1.58;
 }
 
 .mini-list {
     display: grid;
-    gap: 18px;
+    gap: 12px;
+    max-width: 520px;
 }
 
 .mini-item {
     display: flex;
-    align-items: center;
-    gap: 12px;
-    color: #80777b;
-    font-size: 1.35rem;
-    font-weight: 500;
+    align-items: flex-start;
+    gap: 14px;
+    min-height: 54px;
+    padding: 12px 14px;
+    border: 1px solid #f2d8d8;
+    border-radius: 18px;
+    background: #fffafa;
+    color: #6f6266;
+    font-size: 1.05rem;
+    font-weight: 600;
+    line-height: 1.35;
 }
 
 .mini-icon,
@@ -213,8 +225,9 @@ img {
 }
 
 .mini-icon {
-    width: 33px;
-    height: 33px;
+    width: 32px;
+    height: 32px;
+    margin-top: 1px;
     background: #fff;
     color: #b52d35;
     box-shadow: var(--shadow-small);
@@ -229,15 +242,15 @@ img {
 
 .vision-card {
     display: grid;
-    grid-template-columns: 360px 1fr;
-    gap: 58px;
+    grid-template-columns: minmax(280px, 360px) 1fr;
+    gap: clamp(34px, 4.5vw, 58px);
     align-items: center;
-    margin-top: 84px;
-    padding: 58px 50px;
+    margin-top: 74px;
+    padding: clamp(40px, 4.8vw, 58px) clamp(32px, 4vw, 50px);
 }
 
 .vision-media img {
-    height: 515px;
+    height: clamp(410px, 36vw, 515px);
     object-fit: cover;
     border-radius: 28px;
     box-shadow: 0 12px 18px rgba(58, 51, 53, 0.18);
@@ -251,22 +264,22 @@ img {
 .vision-panels {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 22px;
+    gap: 18px;
 }
 
 .vision-panel {
-    min-height: 330px;
-    padding: 42px 28px;
-    border: 3px solid #d7d7d7;
-    border-radius: 36px;
+    min-height: 300px;
+    padding: 34px 26px;
+    border: 2px solid #e3dede;
+    border-radius: 28px;
     background: #fff;
     box-shadow: var(--shadow-small);
 }
 
 .vision-panel h3 {
-    margin: 0 0 36px;
+    margin: 0 0 24px;
     color: #050505;
-    font-size: clamp(2rem, 2.5vw, 3rem);
+    font-size: 2.35rem;
     font-weight: 800;
     line-height: 1;
     text-align: center;
@@ -275,9 +288,9 @@ img {
 .vision-panel p,
 .vision-panel li {
     color: #858083;
-    font-size: 1.13rem;
-    font-weight: 600;
-    line-height: 1.34;
+    font-size: 1.03rem;
+    font-weight: 500;
+    line-height: 1.48;
 }
 
 .vision-panel p {
@@ -293,9 +306,13 @@ img {
     padding-left: 24px;
 }
 
+.vision-panel li + li {
+    margin-top: 10px;
+}
+
 .why-section {
     width: min(88.8%, 1310px);
-    margin: 155px auto 110px;
+    margin: 96px auto 86px;
 }
 
 .why-section h2 {
@@ -307,43 +324,43 @@ img {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 20px;
-    padding: 34px 38px 40px;
+    gap: 18px;
+    padding: 30px;
 }
 
 .feature-card {
-    min-height: 180px;
-    padding: 28px 22px;
-    border: 3px solid #dedede;
-    border-radius: 36px;
+    min-height: 172px;
+    padding: 24px 20px;
+    border: 2px solid #e3dede;
+    border-radius: 26px;
     background: #fff;
     box-shadow: var(--shadow-small);
 }
 
 .feature-heading {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 10px;
     margin-bottom: 13px;
 }
 
 .feature-icon {
-    width: 40px;
-    height: 40px;
+    width: 38px;
+    height: 38px;
 }
 
 .feature-card h3 {
     margin: 0;
     color: #282124;
-    font-size: clamp(0.88rem, 1vw, 1.08rem);
+    font-size: 1rem;
     font-weight: 800;
-    line-height: 1.18;
+    line-height: 1.25;
 }
 
 .feature-card p {
     margin: 0;
     color: #8b8588;
-    font-size: 0.98rem;
+    font-size: 0.95rem;
     font-weight: 600;
     line-height: 1.45;
 }
@@ -351,7 +368,7 @@ img {
 .footer {
     display: grid;
     grid-template-columns: auto 1fr auto;
-    gap: 28px;
+    gap: 24px;
     align-items: center;
     padding: 34px 36px;
     background: rgba(255, 255, 255, 0.9);
@@ -361,14 +378,14 @@ img {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 18px 34px;
+    gap: 12px 28px;
 }
 
 .footer-links a,
 .footer-copy {
     color: #9a9295;
     font-size: 0.82rem;
-    font-weight: 600;
+    font-weight: 400;
     text-decoration: none;
 }
 
@@ -382,24 +399,45 @@ img {
 }
 
 @media (max-width: 1180px) {
+    .page-title h1 {
+        font-size: 3.8rem;
+    }
+
+    .intro-copy h2,
+    .about-copy h2,
+    .vision-content h2,
+    .why-section h2 {
+        font-size: 3rem;
+    }
+
     .intro-card,
     .about-card,
     .vision-card {
         grid-template-columns: 1fr;
     }
 
+    .intro-card,
     .about-card {
-        padding: 58px 50px;
+        padding: 52px 46px;
     }
 
     .intro-media img,
     .about-media img,
     .vision-media img {
-        height: 430px;
+        height: 420px;
     }
 
     .vision-media {
         max-width: 520px;
+    }
+
+    .about-copy p,
+    .mini-list {
+        max-width: none;
+    }
+
+    .vision-card {
+        align-items: start;
     }
 
     .feature-strip {
@@ -425,7 +463,11 @@ img {
     }
 
     .page-title {
-        padding: 70px 18px 62px;
+        padding: 64px 18px 58px;
+    }
+
+    .page-title h1 {
+        font-size: 3rem;
     }
 
     .intro-card,
@@ -433,34 +475,62 @@ img {
     .vision-card,
     .feature-strip {
         width: calc(100% - 28px);
-        border-radius: 28px;
+        border-radius: 24px;
     }
 
     .intro-card,
     .about-card,
     .vision-card {
-        gap: 26px;
+        gap: 24px;
         padding: 28px 18px;
+    }
+
+    .intro-card {
+        padding-top: 22px;
     }
 
     .intro-media img,
     .about-media img,
     .vision-media img {
-        height: 280px;
-        border-radius: 24px;
+        height: 260px;
+        border-radius: 20px;
+    }
+
+    .intro-copy h2,
+    .about-copy h2,
+    .vision-content h2,
+    .why-section h2 {
+        font-size: 2.35rem;
+        line-height: 1.08;
     }
 
     .about-card,
     .vision-card {
-        margin-top: 42px;
+        margin-top: 40px;
+    }
+
+    .intro-copy p,
+    .about-copy p,
+    .vision-panel p,
+    .vision-panel li,
+    .feature-card p {
+        font-size: 0.95rem;
     }
 
     .about-copy p {
-        margin-top: 28px;
+        margin: 18px 0 22px;
     }
 
     .mini-item {
-        font-size: 1rem;
+        min-height: 50px;
+        padding: 11px 12px;
+        border-radius: 16px;
+        font-size: 0.95rem;
+    }
+
+    .mini-icon {
+        width: 30px;
+        height: 30px;
     }
 
     .vision-panels,
@@ -469,36 +539,77 @@ img {
     }
 
     .vision-panel {
-        min-height: 230px;
-        padding: 26px 22px;
-        border-radius: 26px;
+        min-height: auto;
+        padding: 24px 20px;
+        border-radius: 22px;
     }
 
     .vision-panel h3 {
-        margin-bottom: 24px;
+        font-size: 1.9rem;
+        margin-bottom: 18px;
     }
 
     .why-section {
         width: 100%;
-        margin: 58px 0 54px;
+        margin: 54px 0 50px;
         padding-inline: 14px;
     }
 
     .why-section h2 {
         margin-left: 4px;
-        font-size: clamp(2rem, 10vw, 2.55rem);
     }
 
     .feature-strip {
-        padding: 22px;
+        padding: 18px;
     }
 
     .feature-card {
-        min-height: 150px;
-        border-radius: 26px;
+        min-height: auto;
+        padding: 20px 18px;
+        border-radius: 20px;
     }
 
     .footer {
         padding-inline: 18px;
+    }
+}
+
+@media (max-width: 420px) {
+    .topbar {
+        gap: 14px;
+    }
+
+    .profile-chip {
+        min-width: 96px;
+    }
+
+    .intro-card,
+    .about-card,
+    .vision-card,
+    .feature-strip {
+        width: calc(100% - 20px);
+    }
+
+    .intro-media img,
+    .about-media img,
+    .vision-media img {
+        height: 220px;
+    }
+
+    .soft-button {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .footer-links {
+        gap: 10px 18px;
+    }
+
+    .page-title h1,
+    .intro-copy h2,
+    .about-copy h2,
+    .vision-content h2,
+    .why-section h2 {
+        font-size: 2.05rem;
     }
 }

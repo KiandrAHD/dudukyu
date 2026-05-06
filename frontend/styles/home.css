@@ -22,9 +22,7 @@ body {
     margin: 0;
     font-family: "Poppins", sans-serif;
     color: var(--text-main);
-    background:
-        radial-gradient(circle at top center, rgba(255, 208, 208, 0.9), transparent 40%),
-        linear-gradient(180deg, #fff9f9 0%, #fdf1f1 100%);
+    background: #fff;
 }
 
 button,
@@ -33,11 +31,10 @@ a {
 }
 
 .page-shell {
-    width: min(94%, 1420px);
-    margin: 16px auto;
-    background: linear-gradient(180deg, rgba(255, 236, 236, 0.82), rgba(251, 239, 239, 0.96));
+    width: min(100%, 1440px);
+    margin: 0 auto;
+    background: linear-gradient(180deg, #fff4f4 0%, var(--page) 84%, #fff 100%);
     overflow: hidden;
-    box-shadow: 0 0 0 1px rgba(201, 25, 31, 0.03);
 }
 
 .topbar {
@@ -339,7 +336,7 @@ a {
 .footer {
     display: grid;
     grid-template-columns: auto 1fr auto;
-    gap: 28px;
+    gap: 24px;
     align-items: center;
     padding: 34px 36px;
     background: rgba(255, 255, 255, 0.9);
@@ -349,14 +346,14 @@ a {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 18px 34px;
+    gap: 12px 28px;
 }
 
 .footer-links a,
 .footer-copy {
     color: #9a9295;
     font-size: 0.82rem;
-    font-weight: 600;
+    font-weight: 400;
     text-decoration: none;
 }
 
