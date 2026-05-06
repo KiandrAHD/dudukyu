@@ -85,9 +85,15 @@ img {
     min-height: 520px;
 }
 
+.hero-image {
+    overflow: hidden;
+}
+
 .hero-image img {
     height: 100%;
     object-fit: cover;
+    transform: scaleY(1.12);
+    transform-origin: center;
 }
 
 .hero-content {
@@ -106,7 +112,7 @@ img {
     position: absolute;
     inset: 0;
     z-index: -2;
-    background: url(" ") center
+    background: url("") center
 }
 
 .hero-content::after {
