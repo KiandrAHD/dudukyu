@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Zenvira Dining House - DudukYu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/booking.css">
+</head>
+<body id="bookingPage" data-restaurant="Zenvira Dining House">
+    <div class="page-shell">
+        <header class="topbar"><a class="brand" href="./index.html">DudukYuk</a><button id="profileButton" class="profile-chip" type="button">Profil</button></header>
+        <main class="booking-main">
+            <a class="back-link" href="./index.html">&larr; Kembali ke Detail Restoran</a>
+            <section class="restaurant-hero"><img src="../assets/home/7.jpg" alt="Zenvira Dining House"><div class="restaurant-info"><h1>Zenvira Dining House</h1><div class="restaurant-meta"><span class="meta-item"><span class="star">★</span> 5.0 (132+ ulasan)</span><span class="meta-item">Lokasi Wangon, Banyumas</span></div><p>Dining house berkarakter elegan dengan ruang indoor, outdoor, VIP, dan non-smoking untuk reservasi yang lebih fleksibel.</p></div></section>
+            <section class="reservation-panel"><div class="reservation-title"><h2>Buat Reservasi</h2><p>Lengkapi detail di bawah ini untuk melakukan reservasi meja Anda.</p></div><div class="reservation-layout"><aside class="steps"><div class="step"><span class="step-number">1</span><div><strong>Pilih Tanggal</strong><span class="step-icon">▣</span></div></div><div class="step"><span class="step-number">2</span><div><strong>Pilih Jam</strong><span class="step-icon">◷</span></div></div><div class="step"><span class="step-number">3</span><div><strong>Jumlah Orang</strong><span class="step-icon">☷</span></div></div><div class="step"><span class="step-number">4</span><div><strong>Pilih Tempat Duduk</strong><span class="step-icon">▤</span></div></div><div class="step"><span class="step-number">5</span><div><strong>Ringkasan Reservasi</strong><span class="step-icon">☑</span></div></div></aside><form id="bookingForm" class="booking-form"><section class="form-section"><div id="dateOptions" class="date-options"></div><p class="selected-table">Tanggal pilihan: <span id="selectedDateText"></span></p></section><section class="form-section"><div id="timeOptions" class="time-options"></div><span class="availability"><span class="dot"></span>Tersedia</span></section><section class="form-section"><div class="counter-row"><button id="decreasePeople" class="counter-button" type="button">-</button><strong id="peopleCountText" class="people-count"></strong><button id="increasePeople" class="counter-button" type="button">+</button></div><p class="helper-text">Maksimal 10 orang per reservasi</p></section><section class="form-section"><div id="seatOptions" class="seat-options"></div><div class="table-area"><div id="tableMap" class="table-map"></div><div class="legend"><span class="legend-item"><span class="dot available"></span>Tersedia</span><span class="legend-item"><span class="dot selected"></span>Dipilih</span><span class="legend-item"><span class="dot booked"></span>Dipesan</span></div></div><p class="selected-table">Meja pilihanmu: <span id="selectedTableText"></span></p></section><section class="form-section summary-card"><div class="summary-list"><div class="summary-row"><span>Restoran</span><strong data-summary="restaurant"></strong></div><div class="summary-row"><span>Tanggal</span><strong data-summary="date"></strong></div><div class="summary-row"><span>Jam</span><strong data-summary="time"></strong></div><div class="summary-row"><span>Jumlah Orang</span><strong data-summary="people"></strong></div><div class="summary-row"><span>Tempat Duduk</span><strong data-summary="seat"></strong></div></div><div class="arrival-note"><strong>Harap tiba tepat waktu</strong>Kami akan menahan meja Anda selama 15 menit dari waktu reservasi.</div></section><p id="formMessage" class="form-message"></p><button id="confirmButton" class="confirm-button" type="submit">Konfirmasi Reservasi</button></form></div></section>
+        </main>
+        <footer class="footer"><a class="footer-brand" href="./index.html">DudukYuk</a><nav class="footer-links"><a href="/frontend/pages/tentang_kami.html">Tentang Kami</a><a href="/frontend/pages/bermitra_dengan_kami.html">Bermitra dengan Kami</a><a href="#">Kebijakan Privasi</a><a href="#">Terms of Service</a><a href="#">Contact</a></nav><p class="footer-copy">© 2026 DudukYuk Culinary Editorial. Semua hak dilindungi undang-undang.</p></footer>
+    </div>
+    <script src="../js/booking.js"></script>
+</body>
+</html>

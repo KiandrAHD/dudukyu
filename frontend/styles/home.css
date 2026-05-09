@@ -1,6 +1,6 @@
 :root {
-    --red-main: #c9191f;
-    --red-strong: #d12228;
+    --red-main: #dc2626;
+    --red-strong: #b91c1c;
     --red-soft: #f6dfe0;
     --text-main: #4f2830;
     --text-soft: #8b7f82;
@@ -255,6 +255,7 @@ a {
 }
 
 .restaurant-content button,
+.restaurant-content .book-button,
 .offer-copy button {
     min-width: 170px;
     height: 48px;
@@ -267,8 +268,20 @@ a {
     box-shadow: 0 12px 18px rgba(201, 25, 31, 0.16);
 }
 
-.restaurant-content button {
+.restaurant-content button,
+.restaurant-content .book-button {
     width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.restaurant-content button:hover,
+.restaurant-content .book-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 24px rgba(201, 25, 31, 0.22);
 }
 
 .offer-banner {
