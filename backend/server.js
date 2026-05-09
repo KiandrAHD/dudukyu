@@ -7,6 +7,7 @@ const app = express();
 const PORT = 5000;
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 let reservationsReady = Promise.resolve();
+let contactMessagesReady = Promise.resolve();
 
 app.use(cors());
 app.use(express.json());
@@ -26,6 +27,7 @@ db.connect((err) => {
 
     console.log("Database connected!");
     reservationsReady = ensureReservationsTable();
+    contactMessagesReady = ensureContactMessagesTable();
 });
 
 function query(sql, values = []) {
@@ -96,6 +98,26 @@ async function ensureReservationsTable() {
         console.log("Reservations table ready!");
     } catch (error) {
         console.error("Failed to prepare reservations table:", error.message);
+    }
+}
+
+async function ensureContactMessagesTable() {
+    try {
+        await query(`
+            CREATE TABLE IF NOT EXISTS contact_messages (
+                id INT AUTO_INCREMENT PRIMARY KEY,
+                user_name VARCHAR(255),
+                user_email VARCHAR(255),
+                subject VARCHAR(255),
+                message TEXT,
+                status VARCHAR(50) DEFAULT 'pending',
+                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            )
+        `);
+
+        console.log("Contact messages table ready!");
+    } catch (error) {
+        console.error("Failed to prepare contact messages table:", error.message);
     }
 }
 
@@ -263,6 +285,49 @@ app.post("/reservations", async (req, res) => {
         console.error("Reservation failed:", error.message);
         res.status(500).json({
             error: "Gagal menyimpan reservasi",
+            detail: error.message
+        });
+    }
+});
+
+app.post("/contact", async (req, res) => {
+    const userName = String(req.body.user_name || "").trim();
+    const userEmail = String(req.body.user_email || "").trim().toLowerCase();
+    const subject = String(req.body.subject || "").trim();
+    const message = String(req.body.message || "").trim();
+
+    if (!userName || !userEmail || !subject || !message) {
+        return res.status(400).json({ error: "Semua field wajib diisi" });
+    }
+
+    if (!EMAIL_REGEX.test(userEmail)) {
+        return res.status(400).json({ error: "Format email tidak valid" });
+    }
+
+    try {
+        await contactMessagesReady;
+
+        const result = await query(
+            `INSERT INTO contact_messages
+            (user_name, user_email, subject, message, status)
+            VALUES (?, ?, ?, ?, 'pending')`,
+            [userName, userEmail, subject, message]
+        );
+
+        res.status(201).json({
+            message: "Pesan berhasil dikirim",
+            contact: {
+                id: result.insertId,
+                user_name: userName,
+                user_email: userEmail,
+                subject,
+                status: "pending"
+            }
+        });
+    } catch (error) {
+        console.error("Contact message failed:", error.message);
+        res.status(500).json({
+            error: "Gagal mengirim pesan",
             detail: error.message
         });
     }
