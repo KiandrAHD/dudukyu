@@ -290,6 +290,41 @@ app.post("/reservations", async (req, res) => {
     }
 });
 
+app.get("/my-reservations/:userId", async (req, res) => {
+    const userId = Number(req.params.userId);
+
+    if (!Number.isInteger(userId) || userId < 1) {
+        return res.status(400).json({ error: "User tidak valid" });
+    }
+
+    try {
+        await reservationsReady;
+
+        const reservations = await query(
+            `SELECT
+                id,
+                user_id,
+                restaurant_name,
+                reservation_date,
+                reservation_time,
+                people_count,
+                status,
+                table_number,
+                seat_type,
+                created_at
+            FROM reservations
+            WHERE user_id = ?
+            ORDER BY reservation_date DESC, reservation_time DESC, created_at DESC`,
+            [userId]
+        );
+
+        res.json(reservations);
+    } catch (error) {
+        console.error("Failed to fetch user reservations:", error.message);
+        res.status(500).json({ error: "Gagal mengambil data reservasi" });
+    }
+});
+
 app.post("/contact", async (req, res) => {
     const userName = String(req.body.user_name || "").trim();
     const userEmail = String(req.body.user_email || "").trim().toLowerCase();

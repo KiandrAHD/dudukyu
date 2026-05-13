@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DudukYu - Profil Saya</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/home.css">
+    <link rel="stylesheet" href="../styles/profile.css">
+</head>
+<body>
+    <div class="page-shell">
+        <header class="topbar">
+            <a class="brand" href="./index.html">DudukYuk</a>
+            <button id="profileButton" class="profile-chip" type="button">Profil</button>
+        </header>
+
+        <main class="profile-main">
+            <section class="profile-hero" aria-labelledby="profileTitle">
+                <p class="profile-eyebrow">Dashboard Akun</p>
+                <h1 id="profileTitle">Profil Saya</h1>
+                <p>Informasi akun Anda dan riwayat reservasi restoran favorit dalam satu tempat.</p>
+            </section>
+
+            <section class="profile-container">
+                <article class="profile-header" aria-label="Informasi profil">
+                    <div id="profileAvatar" class="profile-avatar" aria-hidden="true">DU</div>
+                    <div class="profile-identity">
+                        <span>Akun DudukYu</span>
+                        <h2 id="profileName">Pengguna DudukYu</h2>
+                        <p id="profileEmail">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M4 5h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Zm0 3.2V17h16V8.2l-7.4 5.05a1 1 0 0 1-1.13 0L4 8.2Zm1.45-1.2L12 11.47 18.55 7H5.45Z"/>
+                            </svg>
+                            <span>email@dudukyu.local</span>
+                        </p>
+                    </div>
+                </article>
+
+                <section class="booking-section" aria-labelledby="bookingTitle">
+                    <div class="booking-heading">
+                        <div>
+                            <span>Riwayat Aktivitas</span>
+                            <h2 id="bookingTitle">Bookingan Saya</h2>
+                        </div>
+                    </div>
+
+                    <div class="booking-tabs" role="tablist" aria-label="Filter booking">
+                        <button class="booking-tab is-active" type="button" role="tab" aria-selected="true" data-status="upcoming">
+                            Akan Datang <span data-count="upcoming">0</span>
+                        </button>
+                        <button class="booking-tab" type="button" role="tab" aria-selected="false" data-status="completed">
+                            Selesai <span data-count="completed">0</span>
+                        </button>
+                        <button class="booking-tab" type="button" role="tab" aria-selected="false" data-status="cancelled">
+                            Dibatalkan <span data-count="cancelled">0</span>
+                        </button>
+                    </div>
+
+                    <div id="bookingList" class="booking-list" aria-live="polite"></div>
+                </section>
+
+                <section class="logout-section" aria-labelledby="logoutTitle">
+                    <div>
+                        <span id="logoutTitle">Keluar Akun</span>
+                        <p>Keluar dari akun DudukYu Anda setelah selesai melihat reservasi.</p>
+                    </div>
+                    <button id="logoutButton" class="logout-button" type="button">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M10 4a1 1 0 0 1 0 2H6v12h4a1 1 0 1 1 0 2H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5Zm6.3 4.3a1 1 0 0 1 1.4 0l3 3a1 1 0 0 1 0 1.4l-3 3a1 1 0 0 1-1.4-1.4l1.29-1.3H10a1 1 0 1 1 0-2h7.59L16.3 9.7a1 1 0 0 1 0-1.4Z"/>
+                        </svg>
+                        Logout
+                    </button>
+                </section>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <a class="footer-brand" href="./index.html">DudukYuk</a>
+            <nav class="footer-links">
+                <a href="/frontend/pages/tentang_kami.html">Tentang Kami</a>
+                <a href="/frontend/pages/bermitra_dengan_kami.html">Bermitra dengan Kami</a>
+                <a href="./kebijakan_privasi.html">Kebijakan Privasi</a>
+                <a href="./terms_of_service.html">Terms of Service</a>
+                <a href="./contact.html">Contact</a>
+            </nav>
+            <p class="footer-copy">&copy; 2026 DudukYuk Culinary Editorial. Semua hak dilindungi undang-undang.</p>
+        </footer>
+    </div>
+
+    <script src="../js/profile.js"></script>
+</body>
+</html>

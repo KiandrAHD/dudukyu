@@ -11,10 +11,5 @@ profileButton?.addEventListener("click", () => {
         return;
     }
 
-    const shouldLogout = window.confirm(`Login sebagai ${storedUser.name}. Keluar dari akun?`);
-
-    if (shouldLogout) {
-        localStorage.removeItem("user");
-        window.location.href = "./login.html";
-    }
+    window.location.href = "./profile.html";
 });

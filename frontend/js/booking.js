@@ -39,12 +39,7 @@ if (profileButton && user?.name) {
 }
 
 profileButton?.addEventListener("click", () => {
-    const shouldLogout = window.confirm(`Login sebagai ${user.name}. Keluar dari akun?`);
-
-    if (shouldLogout) {
-        localStorage.removeItem("user");
-        window.location.href = "./login.html";
-    }
+    window.location.href = "./profile.html";
 });
 
 function formatDateValue(date) {
